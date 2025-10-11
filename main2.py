@@ -280,16 +280,11 @@ def prepare_structured_data_for_llm(cards_details: Dict[str, Dict]) -> Dict[str,
             "demands": item_data.get("demands", []),
             "currency": item_data.get("currency"),
             "smartphone": item_data.get("smartphone", ""),
-
-            # Условия обслуживания
             "maintenance": extract_maintenance_info(item_data),
-
             # Кешбэк
             "cashback": extract_cashback_info(item_data),
-
             # Снятие наличных
             "withdrawal": extract_withdrawal_info(item_data),
-
             # Дополнительные условия
             "conditions": extract_conditions_info(item_data)
         }
